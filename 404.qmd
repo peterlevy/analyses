@@ -1,0 +1,5 @@
+---
+title: "Page not found"
+---
+
+Sorry, that page doesn't exist. Try the [homepage](/) instead.

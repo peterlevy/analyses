@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Diverse Datenanalysen</title>
+<link>https://peterlevy.github.io/analyses/</link>
+<atom:link href="https://peterlevy.github.io/analyses/index.xml" rel="self" type="application/rss+xml"/>
+<description>Data analyses of no fixed abode.</description>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Thu, 29 Jan 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>A standard format for weather data</title>
+  <link>https://peterlevy.github.io/analyses/posts/2026-01-29-metamet/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Data from weather stations are widely used in environmental science. These are referred to in meteorology as surface observations (as opposed to atmospheric data or model outputs). Weather stations typically consist of sensors for air temperature, humidity, wind speed and direction, radiation in various wavelengths, rainfall, and often include soil properties - soil temperature, moisture content, water table height etc. We often want to bring data together from different sources, apply some quality control (at least check for outliers), fill in gaps in the time series, and analyse trends over time. However, how this process is handled is left to the vagaries of individual scientists: there is no easily available system for standardisation, or support for QA/QC, gap filling, visualisation, or re-use.</p>
+<p>The most basic problem is simply of agreeing on standard names for variables. Several conventions exist, but none are widelu used outside the modelling community. Some naming conventions are listed below.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Defines</th>
+<th>Link</th>
+<th>Issues</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Climate Forecast (CF)</td>
+<td>Names &amp; netCDF file format</td>
+<td><a href="https://cfconventions.org/Data/cf-standard-names/docs/guidelines.html">link</a>, and <a href="https://help.ceda.ac.uk/article/4507-the-cf-metadata-convention">from CEDA</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ICOS</td>
+<td>Variable names</td>
+<td><a href="https://cfconventions.org/Data/cf-standard-names/docs/guidelines.html">link</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>AmeriFlux BADM</td>
+<td>Variable names</td>
+<td><a href="../..\ameriflux.lbl.gov/data/badm/badm-standards/">link</a></td>
+<td>Does not including most met variables</td>
+</tr>
+<tr class="even">
+<td>Copernicus Station Exchange Format (SEF)</td>
+<td>Variable names</td>
+<td><a href="https://datarescue.climate.copernicus.eu/variablenames">link</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Copernicus Station Exchange Format (SEF)</td>
+<td>Plain text file format</td>
+<td><a href="https://datarescue.climate.copernicus.eu/station-exchange-format-sef">link</a></td>
+<td>Only one variable per file limits use</td>
+</tr>
+<tr class="even">
+<td>CEDA BADC-CSV</td>
+<td>Plain text file format</td>
+<td><a href="https://help.ceda.ac.uk/article/105-badc-csv">link</a></td>
+<td>Format not easily machine-readable</td>
+</tr>
+</tbody>
+</table>
+<p>Nor are these conventions systematically constructed, so are not easily extended or modified to be more generally usaable. For example, the Climate Forecast (CF) convention constructs a set of <a href="https://cfconventions.org/Data/cf-standard-names/docs/guidelines.html">standard names</a> used widely in climate modelling. Users are able to suggest new variables names in an ad hoc manner. The result is there are ~5250 arbitrarily defined variable names, with no system to their naming. Only 11 chemical species are defined, themselves arbitrary, so no other chemical species can be referred to without inventing new names. Currently all the information is in one self-contained string.</p>
+
+
+
+ ]]></description>
+  <guid>https://peterlevy.github.io/analyses/posts/2026-01-29-metamet/</guid>
+  <pubDate>Thu, 29 Jan 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Feasibility of offsetting methane emissions from cows by planting trees.</title>
+  <link>https://peterlevy.github.io/analyses/posts/2025-11-11-cows/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question:</h2>
+<p><em>What area of land would need to be planted with trees to make up for the methane emissions from grazing cattle?</em></p>
+<p>This may seem a simple question, but equating the two sides of the equation is complicated because it is hard to compare like with like. Emissions from grazing (adult) cattle are constant over time, and depend only on the number of cattle, not the area they occupy. Uptake by planted woodland is proportional to the area and varies strongly over time: initially zero or negative after planting, then positive until a peak growth rate after ~30-50 years, then declining to zero as the woodland matures. At some point a mature woodland reaches equilibrium and becomes carbon neutral (where photosynthesis is balanced by total ecosystem respiration).</p>
+<p>So the question posed cannot be answered without specifying a time period over which to consider the balance between emissions and uptake. We can rephrase the question in a number of ways, depending on how we choose to compare the two.</p>
+<ol type="1">
+<li>What area of land would need to be planted with trees to offset the methane emissions from a single cow over the next 25 years (i.e.&nbsp;so as to meet the Net Zero 2050 target for that single cow)?</li>
+<li>What area of land would need to be planted with trees to offset the methane emissions from a single cow over the next 100 years?</li>
+<li>On a single farm with a fixed area, how long could grazing continue at a reasonable stocking density before the area of the land needed for woodland precludes grazing?</li>
+</ol>
+<p>The timing of the woodland planting is also important, so we also need to distinguish whether this happens at the start of a project or is continuously on-going over time. There is a big benefit to the former.</p>
+<p>We can consider each of these questions, given some parameters for emissions from cows and uptake by trees.</p>
+<section id="methane-from-cows" class="level3">
+<h3 class="anchored" data-anchor-id="methane-from-cows">Methane from cows</h3>
+<p>One dairy cow emits about 100 kg of methane per year from enteric fermentation; for non-dairy cattle, the value is ~50-75 kg/yr - e.g.&nbsp;see <a href="https://teagasc.ie/environment/climate-change-air-quality/methane/">here</a> or <a href="https://naei.energysecurity.gov.uk/emission-factors">here</a>). Methane emissions from manure adds around 20% to this. Here we use a value of 75 x 1.2 = 90 kg of CH4 as an average, intermediate between beef and dairy.</p>
+<p>Methane has a global warming potential about 25 times that of CO₂ over a 100-year period, so that is equivalent to 2250 kg of CO₂ per year. The UK has a cattle population of around 9.5 million, so an annual emission of 21.36 Tg CO<img src="https://latex.codecogs.com/png.latex?_2">-e/yr.</p>
+</section>
+<section id="carbon-uptake-by-trees" class="level3">
+<h3 class="anchored" data-anchor-id="carbon-uptake-by-trees">Carbon uptake by trees</h3>
+<p>For a crude comparator, 2250 kg of CO₂ is equivalent to a mature Sitka spruce tree (dbh of 40 cm, age ~60 years <span class="citation" data-cites="Levy2004">(Levy et al. 2004)</span>). So we need to add one mature tree, requiring 60 years to grow and occupying about 16 m<img src="https://latex.codecogs.com/png.latex?%5E2"> (4 m spacing), for each cow, every year.</p>
+<p>To be properly quantitative so as to answer questions 1-3, we need to consider the time course of tree growth in woodlands. Below, we show data for sycamore/ash/birch from the <a href="https://www.woodlandcarboncode.org.uk/template-documents-and-tools-version-22">Woodland Carbon Code carbon calculation spreadsheet</a>. (version 2.4.1, April 2024). We use this as typical of UK planting for conservation projects in answering the questions below, but other species could be chosen. Results for Sitka spruce, the main commercial species, are rather similar, although the peak growth occurs later.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://peterlevy.github.io/analyses/posts/2025-11-11-cows/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figure 1: Carbon stock in sycamore/ash/birch woodland over time, with 2.5 m initial spacing, yield class 8, no thinning.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The annual change in carbon stock gives the annual flux of CO₂ into the woodland shown below. The solid line shows the instantaneous annual flux in that year, while the dashed line shows the mean flux over the period since planting. Given the time period of interest, we can use the latter to compare with the constant annual emissions from cows.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://peterlevy.github.io/analyses/posts/2025-11-11-cows/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figure 2: Annual CO<img src="https://latex.codecogs.com/png.latex?_2"> flux over time following planting sycamore/ash/birch woodland over time, with 2.5 m initial spacing, yield class 8, no thinning. Solid line shows the instantaneous uptake rate for each year; the dashed line shows the mean uptake rate since planting; the dotted line shows the mean uptake rate over time assuming planting is continuous, with an equal area planted each year.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="q1a.-what-area-of-land-would-need-to-be-planted-with-trees-in-2025-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-25-years-i.e.-so-as-to-meet-the-net-zero-2050-target-for-that-single-cow" class="level3">
+<h3 class="anchored" data-anchor-id="q1a.-what-area-of-land-would-need-to-be-planted-with-trees-in-2025-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-25-years-i.e.-so-as-to-meet-the-net-zero-2050-target-for-that-single-cow">Q1a. What area of land would need to be planted with trees <em>in 2025</em> to offset the methane emissions from a single cow over the next 25 years (i.e.&nbsp;so as to meet the Net Zero 2050 target for that single cow)?</h3>
+<p>In this scenario, we consider the area of woodland planted in 2025 needed to offset the methane emissions from a single cow over the following 25-year period, up to 2050. The whole woodland grows to an age of 25 years over this time. From Figure 1, the carbon sequestration in woodland over this period is 41.95 kg CO<img src="https://latex.codecogs.com/png.latex?_2"> / m<img src="https://latex.codecogs.com/png.latex?%5E2">, so a mean uptake rate of 1.68 kg CO<img src="https://latex.codecogs.com/png.latex?_2"> / m<img src="https://latex.codecogs.com/png.latex?%5E2"> / year (dashed line in Figure 2). The emissions from one cow is a constant 2250 kg CO<img src="https://latex.codecogs.com/png.latex?_2"> / year. So, to offset the 25-year emissions from one cow, you would need to plant 1341 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of new woodland (2250 kg CO₂ divided by 1.68 kg CO<img src="https://latex.codecogs.com/png.latex?_2">/m<img src="https://latex.codecogs.com/png.latex?%5E2">).</p>
+<p>In some ways, the area the cattle occupy does not matter - you just need to plant 1341 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of new woodland per head of cattle. However, if you want to express the required afforestation as a fraction of the land area used for grazing, we need to specify the cattle stocking density. A typical stocking density for conservation grazing is ~0.25 LU/ha = 1 cow per 4 hectares = 1 cow per 40,000 m<img src="https://latex.codecogs.com/png.latex?%5E2">. The required 1341 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of woodland would constitute 3.3525 % of the grazed area. A more typical stocking density for conventional grazing is ~1 LU/ha = 1 cow per 10,000 m<img src="https://latex.codecogs.com/png.latex?%5E2">. The required 1341 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of woodland would constitute 13.41 % of the grazed area.</p>
+</section>
+<section id="q1b.-what-area-of-land-would-need-to-be-planted-with-trees-each-year-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-25-years-i.e.-so-as-to-meet-the-net-zero-2050-target-for-that-single-cow" class="level3">
+<h3 class="anchored" data-anchor-id="q1b.-what-area-of-land-would-need-to-be-planted-with-trees-each-year-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-25-years-i.e.-so-as-to-meet-the-net-zero-2050-target-for-that-single-cow">Q1b. What area of land would need to be planted with trees <em>each year</em> to offset the methane emissions from a single cow over the next 25 years (i.e.&nbsp;so as to meet the Net Zero 2050 target for that single cow)?</h3>
+<p>In this scenario, we consider the total area of woodland that would need to be planted to offset the methane emissions from a single cow over the 25-year period 2025-2050, if the woodland planting was on-going with an equal area planted each year. Only 1/25th of the woodland grows to an age of 25 years over this time, so the mean uptake rate is lower - the dotted line in Figure 2. The mean carbon sequestration across the mixed age woodland over this period is 1.19 kg CO<img src="https://latex.codecogs.com/png.latex?_2"> / m<img src="https://latex.codecogs.com/png.latex?%5E2"> / year. The emissions from one cow is still a constant 2250 kg CO<img src="https://latex.codecogs.com/png.latex?_2"> / year. So, to offset the 25-year emissions from one cow, you would need to plant 1895 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of new woodland (2250 kg CO₂ divided by 1.19 kg CO<img src="https://latex.codecogs.com/png.latex?_2">/m<img src="https://latex.codecogs.com/png.latex?%5E2">).</p>
+<p>At a typical stocking density for conservation grazing is ~0.25 LU/ha = 1 cow per 40,000 m<img src="https://latex.codecogs.com/png.latex?%5E2">, the required 1895 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of woodland would constitute 4.7375 % of the grazed area. At the more typical stocking density for conventional grazing of 1 LU/ha = 1 cow per 10,000 m<img src="https://latex.codecogs.com/png.latex?%5E2">, the required 1895 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of woodland would constitute 18.95 % of the grazed area.</p>
+</section>
+<section id="q2a.-what-area-of-land-would-need-to-be-planted-with-trees-in-2025-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-100-years" class="level3">
+<h3 class="anchored" data-anchor-id="q2a.-what-area-of-land-would-need-to-be-planted-with-trees-in-2025-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-100-years">Q2a. What area of land would need to be planted with trees <em>in 2025</em> to offset the methane emissions from a single cow, over the next 100 years?</h3>
+<p>Here, we repeat the same calculations but consider a longer time period where the woodland is assumed to grow to 100 years old. This makes a difference because tree growth is slow initially, faster from ~15-30 years, and then tails off to zero. The exact shape of the curve depends on the species.</p>
+<p>In this scenario, we consider the area of woodland planted in 2025 needed to offset the methane emissions from a single cow over the following 100-year period, up to 2125. The whole woodland grows to an age of 100 years over this time. From Figure 1, the carbon sequestration in woodland over this period is 93.1 kg CO<img src="https://latex.codecogs.com/png.latex?_2"> / m<img src="https://latex.codecogs.com/png.latex?%5E2">, so a mean uptake rate of 0.93 kg CO<img src="https://latex.codecogs.com/png.latex?_2"> / m<img src="https://latex.codecogs.com/png.latex?%5E2"> / year (From Figure 2). The emissions from one cow is a constant 2250 kg CO<img src="https://latex.codecogs.com/png.latex?_2"> / year. So, to offset the 100-year emissions from one cow, you would need to plant 2417 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of new woodland (2250 kg CO₂ divided by 0.93 kg CO<img src="https://latex.codecogs.com/png.latex?_2">/m<img src="https://latex.codecogs.com/png.latex?%5E2">).</p>
+<p>To express the required afforestation as a fraction of the land area used for grazing, we specify the same cattle stocking densities as before. At a typical stocking density for conservation grazing of ~0.25 LU/ha = 1 cow per 40,000 m<img src="https://latex.codecogs.com/png.latex?%5E2">, the required 2417 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of woodland would constitute 6.0425 % of the grazed area. At the more typical stocking density for conventional grazing of ~1 LU/ha = 1 cow per 10,000 m<img src="https://latex.codecogs.com/png.latex?%5E2">, the required 2417 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of woodland would constitute 24.17 % of the grazed area.</p>
+</section>
+<section id="q2b.-what-area-of-land-would-need-to-be-planted-with-trees-each-year-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-100-years" class="level3">
+<h3 class="anchored" data-anchor-id="q2b.-what-area-of-land-would-need-to-be-planted-with-trees-each-year-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-100-years">Q2b. What area of land would need to be planted with trees <em>each year</em> to offset the methane emissions from a single cow over the next 100 years</h3>
+<p>In this scenario, we consider the total area of woodland that would need to be planted to offset the methane emissions from a single cow over the 100-year period 2025-2125, if the woodland planting was on-going with an equal area planted each year. Only 1/100th of the woodland grows to an age of 100 years over this time, and a bigger area is in the peak growth stage, so the mean uptake rate is higher - the dotted line in Figure 2. The mean carbon sequestration across the mixed age woodland over this period is 1.25 kg CO<img src="https://latex.codecogs.com/png.latex?_2"> / m<img src="https://latex.codecogs.com/png.latex?%5E2"> / year. The emissions from one cow is still a constant 2250 kg CO<img src="https://latex.codecogs.com/png.latex?_2"> / year. So, to offset the 100-year emissions from one cow, you would need to plant 1798 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of new woodland (2250 kg CO₂ divided by 1.25 kg CO<img src="https://latex.codecogs.com/png.latex?_2">/m<img src="https://latex.codecogs.com/png.latex?%5E2">).</p>
+<p>At a typical stocking density for conservation grazing is ~0.25 LU/ha = 1 cow per 40,000 m<img src="https://latex.codecogs.com/png.latex?%5E2">, the required 1798 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of woodland would constitute 4.495 % of the grazed area. At the more typical stocking density for conventional grazing of 1 LU/ha = 1 cow per 10,000 m<img src="https://latex.codecogs.com/png.latex?%5E2">, the required 1798 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of woodland would constitute 17.98 % of the grazed area.</p>
+</section>
+<section id="national-scale-context" class="level3">
+<h3 class="anchored" data-anchor-id="national-scale-context">National-scale context</h3>
+<p>To put these numbers in a national-scale context, we need to consider the UK population of cattle and the land area available.</p>
+<p>To offset the UK cattle herd of ~9.5 million <a href="https://www.gov.uk/government/statistics/livestock-populations-in-the-united-kingdom/livestock-populations-in-the-united-kingdom-at-1-december--2">Defra 2024</a>, half dairy and half beef, we can look at the national area of woodland planting required, given the four scenarios. For comparison, the current UK annual new planting rate is 206.6 km<img src="https://latex.codecogs.com/png.latex?%5E2">/yr in 2023/4 <a href="https://www.forestresearch.gov.uk/tools-and-resources/statistics/publications/forestry-statistics/forestry-statistics-2024/2024-1-woodland-area-and-planting/">FR 2024</a>. The target planting rate is 300 km<img src="https://latex.codecogs.com/png.latex?%5E2">/yr.</p>
+<p>1a. To offset the UK cattle emissions up to 2050 with up-front planting, we would need to plant 12729 km<img src="https://latex.codecogs.com/png.latex?%5E2"> in 2025/6. This is 62 times the current planting rate, and equivalent to 5.2 % of the total UK land area.</p>
+<p>1b. To offset the UK cattle emissions up to 2050 with on-going annual planting, we would need to plant 719 km<img src="https://latex.codecogs.com/png.latex?%5E2"> each year until 2050. This is 3 times the current planting rate, and would give a total area equivalent to 7.4 % of the total UK land area.</p>
+<p>2a. If we consider a 100-year period for woodland growth, we would need to plant 22943 km<img src="https://latex.codecogs.com/png.latex?%5E2"> up-front in 2025/6. This is 111 times the current planting rate, and equivalent to 9.4 % of the total UK land area.</p>
+<p>2b. With on-going annual planting over 100 years, we would need to plant 171 km<img src="https://latex.codecogs.com/png.latex?%5E2"> each year until 2125. This is 0.83 times the current planting rate, and would give a total area equivalent to 7.02 % of the total UK land area.</p>
+</section>
+<section id="q3.-on-a-single-farm-with-a-fixed-area-how-long-could-grazing-continue-at-a-reasonable-stocking-density-before-the-area-of-the-land-needed-for-woodland-precludes-grazing" class="level3">
+<h3 class="anchored" data-anchor-id="q3.-on-a-single-farm-with-a-fixed-area-how-long-could-grazing-continue-at-a-reasonable-stocking-density-before-the-area-of-the-land-needed-for-woodland-precludes-grazing">Q3. On a single farm with a fixed area, how long could grazing continue at a reasonable stocking density before the area of the land needed for woodland precludes grazing?</h3>
+<p>Less arbitrarily, we could assume that both the grazing and afforestation take place within the same fixed area. In this case, we start with 40000 m<img src="https://latex.codecogs.com/png.latex?%5E2"> of grassland per cow, and convert 1798 m<img src="https://latex.codecogs.com/png.latex?%5E2"> to woodland each year, assuming option 2b of an intended 100-year time horizon. In this scenario, grassland is gradually displaced by woodland over time, so the cattle stocking density increases until the whole area is covered by woodland after 22 years.</p>
+</section>
+<section id="conclusions" class="level3">
+<h3 class="anchored" data-anchor-id="conclusions">Conclusions</h3>
+<p>Comparing methane emissions from cows and CO<img src="https://latex.codecogs.com/png.latex?_2"> uptake by trees is not straightforward but a few points are clear.</p>
+<ul>
+<li>Carbon sequestration from planted woodland is transient (it occurs over a few decades and then declines to zero), whilst methane emissions per cow are constant.</li>
+<li>Because of this, in the long term we need to keep continually planting new woodland to offset constant emissions.</li>
+<li>To compare like-with-like, we need to specify a time period and a tree planting schedule (e.g.&nbsp;all-at-once or continuous).</li>
+<li>To offset emissions from the current UK cattle herd over the next 25 years, in time to meet the Net Zero 2050 target, we need to plant an additional 7 % of the total UK land area, requiring 3 times the current planting rate for 25 years (option 1b). Planting the required area up-front in 2025/26 (12729 km<img src="https://latex.codecogs.com/png.latex?%5E2">, option 1a) is not practically feasible. Considering on-going annual planting over 100 years makes this feasible within the current planting rate, but delays reaching a net zero balance until 2125.</li>
+</ul>
+<p>In general, the uptake capacity of woodland planting on the scale feasible in the UK is small compared to the size of the emissions from the UK cattle population. At the current planting rate, we are sequestering 1.211 % of the emissions from the UK cattle population (0.2586 Tg CO<img src="https://latex.codecogs.com/png.latex?_2">/yr, compared with emissions from the UK cattle population of 21.36 Tg CO<img src="https://latex.codecogs.com/png.latex?_2">-e/yr).</p>
+<!-- As an independent check on these values, the UK GHG [inventory](https://www.gov.uk/government/statistics/final-uk-greenhouse-gas-emissions-statistics-1990-to-2023)
+reports methane emissions from the UK cattle population as
+
+::: {.cell}
+
+```{.r .cell-code}
+e_cow_inv <- set_units(21.2, Mt/yr)
+e_cow_inv <- set_units(e_cow_inv, Tg/yr)
+set_units(e_cow_inv / 1875, kg/yr)
+set_units(e_cow_inv / n_cows, kg/yr)
+round(set_units(e_cow * n_cows, Tg/yr), 2)
+```
+:::
+
+The UK GHG inventory does not report the uptake by woodland planted in a 
+specific year, but the 10-year mean for uptake by all woodland planted in the 
+previous 20 years is
+f_c <- set_units(0.2, Mt/yr)
+f_c <- set_units(f_c, Tg/yr)
+f_c / current_planting_rate
+set_units(f_c / current_planting_rate, kg/m^2/yr)
+round(set_units(f_c / current_planting_rate, kg/m^2/yr), 2)
+``` -->
+<!-- 1. Estimate the rotation length on which any harvesting might occur, and use the
+mean carbon stock over that period. You can then calculate the area of woodland
+that has to be planted and maintained each year on that basis to offset the 
+annual methane emissions from one cow. This is an equilibrium approach, as it is
+based on a long-term average carbon stock.
+
+2. Consider a fixed time interval over which grazing is to take place, and 
+equate with the woodland carbon sequestration which can place over this same 
+interval. This is a transient approach, as it considers the the immediate 
+carbon sequestration as it progresses, rather than assuming anything about a 
+long-term equilibrium.
+
+3. Consider a fixed area of land which is used for both grazing and woodland. 
+Here the question becomes how long can grazing be sustained before the area is
+completely converted to woodland (or some livestock stocking density threshold 
+exceeded). This is also a transient approach, but makes no assumption about 
+additional land being available elsewhere to be afforested. -->
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Levy2004" class="csl-entry">
+Levy, P. E., S. E. Hale, and B. C. Nicoll. 2004. <span>“Biomass Expansion Factors and Root: Shoot Ratios for Coniferous Tree Species in <span>Great Britain</span>.”</span> <em>Forestry</em> 77 (5): 421–30. <a href="https://doi.org/10.1093/forestry/77.5.421">https://doi.org/10.1093/forestry/77.5.421</a>.
+</div>
+</div></section></div> ]]></description>
+  <guid>https://peterlevy.github.io/analyses/posts/2025-11-11-cows/</guid>
+  <pubDate>Tue, 11 Nov 2025 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Research debt and reproducibility in science</title>
+  <link>https://peterlevy.github.io/analyses/posts/2014-03-03-research-debt/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Some web pages on <a href="https://distill.pub/2017/research-debt/">research debt</a> and <a href="https://www.mariushobbhahn.com/2020-03-22-case_for_rep_ML/">reproducibility</a> in science. To be revisited in relation to particularly <a href="https://peterlevy.github.io/reproducibility_esa">ecology</a>.</p>
+
+
+
+ ]]></description>
+  <guid>https://peterlevy.github.io/analyses/posts/2014-03-03-research-debt/</guid>
+  <pubDate>Mon, 03 Mar 2014 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

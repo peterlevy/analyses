@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - .nojekyll
+
+website:
+  title: "Diverse Datenanalysen"
+  description: "Data analyses of no fixed abode."
+  site-url: "https://peterlevy.github.io/analyses/"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Analyses
+      - href: about.qmd
+        text: About
+  page-footer:
+    right:
+      - icon: github
+        href: https://github.com/peterlevy
+      - icon: stack-overflow
+        href: https://stackoverflow.com/users/14319767/plevy
+
+format:
+  html:
+    theme: cosmo
+
+freeze: auto

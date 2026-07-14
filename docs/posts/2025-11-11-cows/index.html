@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-11-11">
+
+<title>Feasibility of offsetting methane emissions from cows by planting trees. – Diverse Datenanalysen</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Diverse Datenanalysen</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Analyses</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Feasibility of offsetting methane emissions from cows by planting trees.</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Peter Levy </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            CEH
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 11, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question:</h2>
+<p><em>What area of land would need to be planted with trees to make up for the methane emissions from grazing cattle?</em></p>
+<p>This may seem a simple question, but equating the two sides of the equation is complicated because it is hard to compare like with like. Emissions from grazing (adult) cattle are constant over time, and depend only on the number of cattle, not the area they occupy. Uptake by planted woodland is proportional to the area and varies strongly over time: initially zero or negative after planting, then positive until a peak growth rate after ~30-50 years, then declining to zero as the woodland matures. At some point a mature woodland reaches equilibrium and becomes carbon neutral (where photosynthesis is balanced by total ecosystem respiration).</p>
+<p>So the question posed cannot be answered without specifying a time period over which to consider the balance between emissions and uptake. We can rephrase the question in a number of ways, depending on how we choose to compare the two.</p>
+<ol type="1">
+<li>What area of land would need to be planted with trees to offset the methane emissions from a single cow over the next 25 years (i.e.&nbsp;so as to meet the Net Zero 2050 target for that single cow)?</li>
+<li>What area of land would need to be planted with trees to offset the methane emissions from a single cow over the next 100 years?</li>
+<li>On a single farm with a fixed area, how long could grazing continue at a reasonable stocking density before the area of the land needed for woodland precludes grazing?</li>
+</ol>
+<p>The timing of the woodland planting is also important, so we also need to distinguish whether this happens at the start of a project or is continuously on-going over time. There is a big benefit to the former.</p>
+<p>We can consider each of these questions, given some parameters for emissions from cows and uptake by trees.</p>
+<section id="methane-from-cows" class="level3">
+<h3 class="anchored" data-anchor-id="methane-from-cows">Methane from cows</h3>
+<p>One dairy cow emits about 100 kg of methane per year from enteric fermentation; for non-dairy cattle, the value is ~50-75 kg/yr - e.g.&nbsp;see <a href="https://teagasc.ie/environment/climate-change-air-quality/methane/">here</a> or <a href="https://naei.energysecurity.gov.uk/emission-factors">here</a>). Methane emissions from manure adds around 20% to this. Here we use a value of 75 x 1.2 = 90 kg of CH4 as an average, intermediate between beef and dairy.</p>
+<p>Methane has a global warming potential about 25 times that of CO₂ over a 100-year period, so that is equivalent to 2250 kg of CO₂ per year. The UK has a cattle population of around 9.5 million, so an annual emission of 21.36 Tg CO<span class="math inline">\(_2\)</span>-e/yr.</p>
+</section>
+<section id="carbon-uptake-by-trees" class="level3">
+<h3 class="anchored" data-anchor-id="carbon-uptake-by-trees">Carbon uptake by trees</h3>
+<p>For a crude comparator, 2250 kg of CO₂ is equivalent to a mature Sitka spruce tree (dbh of 40 cm, age ~60 years <span class="citation" data-cites="Levy2004">(<a href="#ref-Levy2004" role="doc-biblioref">Levy et al. 2004</a>)</span>). So we need to add one mature tree, requiring 60 years to grow and occupying about 16 m<span class="math inline">\(^2\)</span> (4 m spacing), for each cow, every year.</p>
+<p>To be properly quantitative so as to answer questions 1-3, we need to consider the time course of tree growth in woodlands. Below, we show data for sycamore/ash/birch from the <a href="https://www.woodlandcarboncode.org.uk/template-documents-and-tools-version-22">Woodland Carbon Code carbon calculation spreadsheet</a>. (version 2.4.1, April 2024). We use this as typical of UK planting for conservation projects in answering the questions below, but other species could be chosen. Results for Sitka spruce, the main commercial species, are rather similar, although the peak growth occurs later.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figure 1: Carbon stock in sycamore/ash/birch woodland over time, with 2.5 m initial spacing, yield class 8, no thinning.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The annual change in carbon stock gives the annual flux of CO₂ into the woodland shown below. The solid line shows the instantaneous annual flux in that year, while the dashed line shows the mean flux over the period since planting. Given the time period of interest, we can use the latter to compare with the constant annual emissions from cows.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figure 2: Annual CO<span class="math inline">\(_2\)</span> flux over time following planting sycamore/ash/birch woodland over time, with 2.5 m initial spacing, yield class 8, no thinning. Solid line shows the instantaneous uptake rate for each year; the dashed line shows the mean uptake rate since planting; the dotted line shows the mean uptake rate over time assuming planting is continuous, with an equal area planted each year.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="q1a.-what-area-of-land-would-need-to-be-planted-with-trees-in-2025-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-25-years-i.e.-so-as-to-meet-the-net-zero-2050-target-for-that-single-cow" class="level3">
+<h3 class="anchored" data-anchor-id="q1a.-what-area-of-land-would-need-to-be-planted-with-trees-in-2025-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-25-years-i.e.-so-as-to-meet-the-net-zero-2050-target-for-that-single-cow">Q1a. What area of land would need to be planted with trees <em>in 2025</em> to offset the methane emissions from a single cow over the next 25 years (i.e.&nbsp;so as to meet the Net Zero 2050 target for that single cow)?</h3>
+<p>In this scenario, we consider the area of woodland planted in 2025 needed to offset the methane emissions from a single cow over the following 25-year period, up to 2050. The whole woodland grows to an age of 25 years over this time. From Figure 1, the carbon sequestration in woodland over this period is 41.95 kg CO<span class="math inline">\(_2\)</span> / m<span class="math inline">\(^2\)</span>, so a mean uptake rate of 1.68 kg CO<span class="math inline">\(_2\)</span> / m<span class="math inline">\(^2\)</span> / year (dashed line in Figure 2). The emissions from one cow is a constant 2250 kg CO<span class="math inline">\(_2\)</span> / year. So, to offset the 25-year emissions from one cow, you would need to plant 1341 m<span class="math inline">\(^2\)</span> of new woodland (2250 kg CO₂ divided by 1.68 kg CO<span class="math inline">\(_2\)</span>/m<span class="math inline">\(^2\)</span>).</p>
+<p>In some ways, the area the cattle occupy does not matter - you just need to plant 1341 m<span class="math inline">\(^2\)</span> of new woodland per head of cattle. However, if you want to express the required afforestation as a fraction of the land area used for grazing, we need to specify the cattle stocking density. A typical stocking density for conservation grazing is ~0.25 LU/ha = 1 cow per 4 hectares = 1 cow per 40,000 m<span class="math inline">\(^2\)</span>. The required 1341 m<span class="math inline">\(^2\)</span> of woodland would constitute 3.3525 % of the grazed area. A more typical stocking density for conventional grazing is ~1 LU/ha = 1 cow per 10,000 m<span class="math inline">\(^2\)</span>. The required 1341 m<span class="math inline">\(^2\)</span> of woodland would constitute 13.41 % of the grazed area.</p>
+</section>
+<section id="q1b.-what-area-of-land-would-need-to-be-planted-with-trees-each-year-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-25-years-i.e.-so-as-to-meet-the-net-zero-2050-target-for-that-single-cow" class="level3">
+<h3 class="anchored" data-anchor-id="q1b.-what-area-of-land-would-need-to-be-planted-with-trees-each-year-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-25-years-i.e.-so-as-to-meet-the-net-zero-2050-target-for-that-single-cow">Q1b. What area of land would need to be planted with trees <em>each year</em> to offset the methane emissions from a single cow over the next 25 years (i.e.&nbsp;so as to meet the Net Zero 2050 target for that single cow)?</h3>
+<p>In this scenario, we consider the total area of woodland that would need to be planted to offset the methane emissions from a single cow over the 25-year period 2025-2050, if the woodland planting was on-going with an equal area planted each year. Only 1/25th of the woodland grows to an age of 25 years over this time, so the mean uptake rate is lower - the dotted line in Figure 2. The mean carbon sequestration across the mixed age woodland over this period is 1.19 kg CO<span class="math inline">\(_2\)</span> / m<span class="math inline">\(^2\)</span> / year. The emissions from one cow is still a constant 2250 kg CO<span class="math inline">\(_2\)</span> / year. So, to offset the 25-year emissions from one cow, you would need to plant 1895 m<span class="math inline">\(^2\)</span> of new woodland (2250 kg CO₂ divided by 1.19 kg CO<span class="math inline">\(_2\)</span>/m<span class="math inline">\(^2\)</span>).</p>
+<p>At a typical stocking density for conservation grazing is ~0.25 LU/ha = 1 cow per 40,000 m<span class="math inline">\(^2\)</span>, the required 1895 m<span class="math inline">\(^2\)</span> of woodland would constitute 4.7375 % of the grazed area. At the more typical stocking density for conventional grazing of 1 LU/ha = 1 cow per 10,000 m<span class="math inline">\(^2\)</span>, the required 1895 m<span class="math inline">\(^2\)</span> of woodland would constitute 18.95 % of the grazed area.</p>
+</section>
+<section id="q2a.-what-area-of-land-would-need-to-be-planted-with-trees-in-2025-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-100-years" class="level3">
+<h3 class="anchored" data-anchor-id="q2a.-what-area-of-land-would-need-to-be-planted-with-trees-in-2025-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-100-years">Q2a. What area of land would need to be planted with trees <em>in 2025</em> to offset the methane emissions from a single cow, over the next 100 years?</h3>
+<p>Here, we repeat the same calculations but consider a longer time period where the woodland is assumed to grow to 100 years old. This makes a difference because tree growth is slow initially, faster from ~15-30 years, and then tails off to zero. The exact shape of the curve depends on the species.</p>
+<p>In this scenario, we consider the area of woodland planted in 2025 needed to offset the methane emissions from a single cow over the following 100-year period, up to 2125. The whole woodland grows to an age of 100 years over this time. From Figure 1, the carbon sequestration in woodland over this period is 93.1 kg CO<span class="math inline">\(_2\)</span> / m<span class="math inline">\(^2\)</span>, so a mean uptake rate of 0.93 kg CO<span class="math inline">\(_2\)</span> / m<span class="math inline">\(^2\)</span> / year (From Figure 2). The emissions from one cow is a constant 2250 kg CO<span class="math inline">\(_2\)</span> / year. So, to offset the 100-year emissions from one cow, you would need to plant 2417 m<span class="math inline">\(^2\)</span> of new woodland (2250 kg CO₂ divided by 0.93 kg CO<span class="math inline">\(_2\)</span>/m<span class="math inline">\(^2\)</span>).</p>
+<p>To express the required afforestation as a fraction of the land area used for grazing, we specify the same cattle stocking densities as before. At a typical stocking density for conservation grazing of ~0.25 LU/ha = 1 cow per 40,000 m<span class="math inline">\(^2\)</span>, the required 2417 m<span class="math inline">\(^2\)</span> of woodland would constitute 6.0425 % of the grazed area. At the more typical stocking density for conventional grazing of ~1 LU/ha = 1 cow per 10,000 m<span class="math inline">\(^2\)</span>, the required 2417 m<span class="math inline">\(^2\)</span> of woodland would constitute 24.17 % of the grazed area.</p>
+</section>
+<section id="q2b.-what-area-of-land-would-need-to-be-planted-with-trees-each-year-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-100-years" class="level3">
+<h3 class="anchored" data-anchor-id="q2b.-what-area-of-land-would-need-to-be-planted-with-trees-each-year-to-offset-the-methane-emissions-from-a-single-cow-over-the-next-100-years">Q2b. What area of land would need to be planted with trees <em>each year</em> to offset the methane emissions from a single cow over the next 100 years</h3>
+<p>In this scenario, we consider the total area of woodland that would need to be planted to offset the methane emissions from a single cow over the 100-year period 2025-2125, if the woodland planting was on-going with an equal area planted each year. Only 1/100th of the woodland grows to an age of 100 years over this time, and a bigger area is in the peak growth stage, so the mean uptake rate is higher - the dotted line in Figure 2. The mean carbon sequestration across the mixed age woodland over this period is 1.25 kg CO<span class="math inline">\(_2\)</span> / m<span class="math inline">\(^2\)</span> / year. The emissions from one cow is still a constant 2250 kg CO<span class="math inline">\(_2\)</span> / year. So, to offset the 100-year emissions from one cow, you would need to plant 1798 m<span class="math inline">\(^2\)</span> of new woodland (2250 kg CO₂ divided by 1.25 kg CO<span class="math inline">\(_2\)</span>/m<span class="math inline">\(^2\)</span>).</p>
+<p>At a typical stocking density for conservation grazing is ~0.25 LU/ha = 1 cow per 40,000 m<span class="math inline">\(^2\)</span>, the required 1798 m<span class="math inline">\(^2\)</span> of woodland would constitute 4.495 % of the grazed area. At the more typical stocking density for conventional grazing of 1 LU/ha = 1 cow per 10,000 m<span class="math inline">\(^2\)</span>, the required 1798 m<span class="math inline">\(^2\)</span> of woodland would constitute 17.98 % of the grazed area.</p>
+</section>
+<section id="national-scale-context" class="level3">
+<h3 class="anchored" data-anchor-id="national-scale-context">National-scale context</h3>
+<p>To put these numbers in a national-scale context, we need to consider the UK population of cattle and the land area available.</p>
+<p>To offset the UK cattle herd of ~9.5 million <a href="https://www.gov.uk/government/statistics/livestock-populations-in-the-united-kingdom/livestock-populations-in-the-united-kingdom-at-1-december--2">Defra 2024</a>, half dairy and half beef, we can look at the national area of woodland planting required, given the four scenarios. For comparison, the current UK annual new planting rate is 206.6 km<span class="math inline">\(^2\)</span>/yr in 2023/4 <a href="https://www.forestresearch.gov.uk/tools-and-resources/statistics/publications/forestry-statistics/forestry-statistics-2024/2024-1-woodland-area-and-planting/">FR 2024</a>. The target planting rate is 300 km<span class="math inline">\(^2\)</span>/yr.</p>
+<p>1a. To offset the UK cattle emissions up to 2050 with up-front planting, we would need to plant 12729 km<span class="math inline">\(^2\)</span> in 2025/6. This is 62 times the current planting rate, and equivalent to 5.2 % of the total UK land area.</p>
+<p>1b. To offset the UK cattle emissions up to 2050 with on-going annual planting, we would need to plant 719 km<span class="math inline">\(^2\)</span> each year until 2050. This is 3 times the current planting rate, and would give a total area equivalent to 7.4 % of the total UK land area.</p>
+<p>2a. If we consider a 100-year period for woodland growth, we would need to plant 22943 km<span class="math inline">\(^2\)</span> up-front in 2025/6. This is 111 times the current planting rate, and equivalent to 9.4 % of the total UK land area.</p>
+<p>2b. With on-going annual planting over 100 years, we would need to plant 171 km<span class="math inline">\(^2\)</span> each year until 2125. This is 0.83 times the current planting rate, and would give a total area equivalent to 7.02 % of the total UK land area.</p>
+</section>
+<section id="q3.-on-a-single-farm-with-a-fixed-area-how-long-could-grazing-continue-at-a-reasonable-stocking-density-before-the-area-of-the-land-needed-for-woodland-precludes-grazing" class="level3">
+<h3 class="anchored" data-anchor-id="q3.-on-a-single-farm-with-a-fixed-area-how-long-could-grazing-continue-at-a-reasonable-stocking-density-before-the-area-of-the-land-needed-for-woodland-precludes-grazing">Q3. On a single farm with a fixed area, how long could grazing continue at a reasonable stocking density before the area of the land needed for woodland precludes grazing?</h3>
+<p>Less arbitrarily, we could assume that both the grazing and afforestation take place within the same fixed area. In this case, we start with 40000 m<span class="math inline">\(^2\)</span> of grassland per cow, and convert 1798 m<span class="math inline">\(^2\)</span> to woodland each year, assuming option 2b of an intended 100-year time horizon. In this scenario, grassland is gradually displaced by woodland over time, so the cattle stocking density increases until the whole area is covered by woodland after 22 years.</p>
+</section>
+<section id="conclusions" class="level3">
+<h3 class="anchored" data-anchor-id="conclusions">Conclusions</h3>
+<p>Comparing methane emissions from cows and CO<span class="math inline">\(_2\)</span> uptake by trees is not straightforward but a few points are clear.</p>
+<ul>
+<li>Carbon sequestration from planted woodland is transient (it occurs over a few decades and then declines to zero), whilst methane emissions per cow are constant.</li>
+<li>Because of this, in the long term we need to keep continually planting new woodland to offset constant emissions.</li>
+<li>To compare like-with-like, we need to specify a time period and a tree planting schedule (e.g.&nbsp;all-at-once or continuous).</li>
+<li>To offset emissions from the current UK cattle herd over the next 25 years, in time to meet the Net Zero 2050 target, we need to plant an additional 7 % of the total UK land area, requiring 3 times the current planting rate for 25 years (option 1b). Planting the required area up-front in 2025/26 (12729 km<span class="math inline">\(^2\)</span>, option 1a) is not practically feasible. Considering on-going annual planting over 100 years makes this feasible within the current planting rate, but delays reaching a net zero balance until 2125.</li>
+</ul>
+<p>In general, the uptake capacity of woodland planting on the scale feasible in the UK is small compared to the size of the emissions from the UK cattle population. At the current planting rate, we are sequestering 1.211 % of the emissions from the UK cattle population (0.2586 Tg CO<span class="math inline">\(_2\)</span>/yr, compared with emissions from the UK cattle population of 21.36 Tg CO<span class="math inline">\(_2\)</span>-e/yr).</p>
+<!-- As an independent check on these values, the UK GHG [inventory](https://www.gov.uk/government/statistics/final-uk-greenhouse-gas-emissions-statistics-1990-to-2023)
+reports methane emissions from the UK cattle population as
+
+::: {.cell}
+
+```{.r .cell-code}
+e_cow_inv <- set_units(21.2, Mt/yr)
+e_cow_inv <- set_units(e_cow_inv, Tg/yr)
+set_units(e_cow_inv / 1875, kg/yr)
+set_units(e_cow_inv / n_cows, kg/yr)
+round(set_units(e_cow * n_cows, Tg/yr), 2)
+```
+:::
+
+The UK GHG inventory does not report the uptake by woodland planted in a 
+specific year, but the 10-year mean for uptake by all woodland planted in the 
+previous 20 years is
+f_c <- set_units(0.2, Mt/yr)
+f_c <- set_units(f_c, Tg/yr)
+f_c / current_planting_rate
+set_units(f_c / current_planting_rate, kg/m^2/yr)
+round(set_units(f_c / current_planting_rate, kg/m^2/yr), 2)
+``` -->
+<!-- 1. Estimate the rotation length on which any harvesting might occur, and use the
+mean carbon stock over that period. You can then calculate the area of woodland
+that has to be planted and maintained each year on that basis to offset the 
+annual methane emissions from one cow. This is an equilibrium approach, as it is
+based on a long-term average carbon stock.
+
+2. Consider a fixed time interval over which grazing is to take place, and 
+equate with the woodland carbon sequestration which can place over this same 
+interval. This is a transient approach, as it considers the the immediate 
+carbon sequestration as it progresses, rather than assuming anything about a 
+long-term equilibrium.
+
+3. Consider a fixed area of land which is used for both grazing and woodland. 
+Here the question becomes how long can grazing be sustained before the area is
+completely converted to woodland (or some livestock stocking density threshold 
+exceeded). This is also a transient approach, but makes no assumption about 
+additional land being available elsewhere to be afforested. -->
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Levy2004" class="csl-entry" role="listitem">
+Levy, P. E., S. E. Hale, and B. C. Nicoll. 2004. <span>“Biomass Expansion Factors and Root: Shoot Ratios for Coniferous Tree Species in <span>Great Britain</span>.”</span> <em>Forestry</em> 77 (5): 421–30. <a href="https://doi.org/10.1093/forestry/77.5.421">https://doi.org/10.1093/forestry/77.5.421</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/peterlevy\.github\.io\/analyses\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/peterlevy">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://stackoverflow.com/users/14319767/plevy">
+      <i class="bi bi-stack-overflow" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
